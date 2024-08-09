@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://cog2k3ap0730j"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_ioyg8"]
+[ext_resource type="Script" path="res://Player/StateMachine/player_state_machine.gd" id="2_43x7h"]
+[ext_resource type="Texture2D" uid="uid://drg61v2ibcmus" path="res://icon.svg" id="2_sypyy"]
+[ext_resource type="Script" path="res://Player/StateMachine/State/player_idle_state.gd" id="3_m80xp"]
+[ext_resource type="Script" path="res://Player/StateMachine/State/player_run_state.gd" id="4_d3xmu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxqip"]
+size = Vector2(125, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxuoj"]
+atlas = ExtResource("2_sypyy")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x7p3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxuoj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ioyg8")
+speed = 100.0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mxqip")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x7p3w")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("player_node", "current_state")]
+script = ExtResource("2_43x7h")
+player_node = NodePath("..")
+current_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("3_m80xp")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("4_d3xmu")
