@@ -1,13 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://v1khftftb4vk"]
+[gd_scene load_steps=7 format=3 uid="uid://v1khftftb4vk"]
 
 [ext_resource type="PackedScene" uid="uid://048tvptedgi0" path="res://Projectiles/Base/base_projectile.tscn" id="1_f52c8"]
 [ext_resource type="Script" path="res://Projectiles/Spear/spear.gd" id="2_24xie"]
+[ext_resource type="Texture2D" uid="uid://drg61v2ibcmus" path="res://icon.svg" id="3_jkwbk"]
 [ext_resource type="Script" path="res://Component/hit_box.gd" id="3_mdd2s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gks65"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jkwbk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w628q"]
 
 [node name="Spear" instance=ExtResource("1_f52c8")]
 script = ExtResource("2_24xie")
+speed = 5.0
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_gks65")
 
 [node name="HitBox" type="Area2D" parent="." index="1"]
 collision_layer = 4

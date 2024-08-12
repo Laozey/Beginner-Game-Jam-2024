@@ -21,3 +21,8 @@ func move(delta: float) -> void:
 	var direction = InputManager.get_direction()
 	var motion: Vector2 = speed * delta * direction
 	move_and_collide(motion)
+
+
+func _input(event):
+	if event.is_action_pressed("exit"):
+		get_tree().quit()
