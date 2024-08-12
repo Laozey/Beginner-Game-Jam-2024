@@ -18,6 +18,8 @@ animations = [{
 }]
 
 [node name="Mob_Walker" type="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 3
 script = ExtResource("1_57qd3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
