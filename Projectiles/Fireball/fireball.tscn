@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5ml524k1qyq8"]
+
+[ext_resource type="PackedScene" uid="uid://048tvptedgi0" path="res://Projectiles/Base/base_projectile.tscn" id="1_tdjel"]
+[ext_resource type="Script" path="res://Projectiles/Fireball/fireball.gd" id="2_akuus"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qrchq"]
+
+[node name="Fireball" instance=ExtResource("1_tdjel")]
+script = ExtResource("2_akuus")
+
+[node name="TriggerBox" type="Area2D" parent="." index="1"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerBox" index="0"]
+shape = SubResource("CircleShape2D_qrchq")
+
+[connection signal="area_entered" from="TriggerBox" to="." method="_on_trigger_box_area_entered"]

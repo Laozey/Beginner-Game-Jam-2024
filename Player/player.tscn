@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cog2k3ap0730j"]
+[gd_scene load_steps=10 format=3 uid="uid://cog2k3ap0730j"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_ioyg8"]
 [ext_resource type="Script" path="res://Player/StateMachine/player_state_machine.gd" id="2_43x7h"]
 [ext_resource type="Texture2D" uid="uid://drg61v2ibcmus" path="res://icon.svg" id="2_sypyy"]
 [ext_resource type="Script" path="res://Player/StateMachine/State/player_idle_state.gd" id="3_m80xp"]
 [ext_resource type="Script" path="res://Player/StateMachine/State/player_run_state.gd" id="4_d3xmu"]
+[ext_resource type="Script" path="res://Weapons/weapon_manager.gd" id="6_djw2s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxqip"]
 size = Vector2(125, 125)
@@ -54,3 +55,6 @@ script = ExtResource("3_m80xp")
 
 [node name="Run" type="Node" parent="StateMachine"]
 script = ExtResource("4_d3xmu")
+
+[node name="Weapons" type="Node2D" parent="."]
+script = ExtResource("6_djw2s")

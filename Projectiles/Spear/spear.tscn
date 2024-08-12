@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://v1khftftb4vk"]
+
+[ext_resource type="PackedScene" uid="uid://048tvptedgi0" path="res://Projectiles/Base/base_projectile.tscn" id="1_f52c8"]
+[ext_resource type="Script" path="res://Projectiles/Spear/spear.gd" id="2_24xie"]
+[ext_resource type="Script" path="res://Component/hit_box.gd" id="3_mdd2s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w628q"]
+
+[node name="Spear" instance=ExtResource("1_f52c8")]
+script = ExtResource("2_24xie")
+
+[node name="HitBox" type="Area2D" parent="." index="1"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_mdd2s")
+hit_count = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
+shape = SubResource("RectangleShape2D_w628q")
+
+[connection signal="last_hit" from="HitBox" to="." method="_on_hit_box_last_hit"]
