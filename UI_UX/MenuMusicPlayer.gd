@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-const title_music = preload("res://Assets/Music/IGDB GameJam 2024 Main Title v1.mp3")
+const title_music = preload("res://Assets/Music/IGDB GameJam 2024 Main Title v2.mp3")
 
 func _play_music(music: AudioStream, volume = 0.0):
 	if stream == music:
