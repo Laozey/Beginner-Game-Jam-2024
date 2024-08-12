@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+MusicPlayer="*res://Autoloads/MusicPlayer.tscn"
 InputManager="*res://Autoloads/input_manager.gd"
 
 [input]
