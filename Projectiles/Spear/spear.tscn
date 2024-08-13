@@ -25,7 +25,15 @@ speed = 5.0
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_gks65")
 
-[node name="HitBox" type="Area2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="0"]
+scale = Vector2(0.7, 0.05)
+sprite_frames = SubResource("SpriteFrames_dcbpx")
+
+[node name="Lifetime" type="Timer" parent="." index="1"]
+wait_time = 3.0
+autostart = true
+
+[node name="HitBox" type="Area2D" parent="." index="2"]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("3_mdd2s")
@@ -34,4 +42,5 @@ hit_count = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("RectangleShape2D_w628q")
 
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
 [connection signal="last_hit" from="HitBox" to="." method="_on_hit_box_last_hit"]

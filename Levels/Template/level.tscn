@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4mkuwnycuhuv"]
+
+[ext_resource type="PackedScene" uid="uid://cog2k3ap0730j" path="res://Player/player.tscn" id="1_54rh8"]
+
+[node name="Level" type="Node"]
+
+[node name="ProjectilePool" type="Node" parent="." groups=["ProjectilePool"]]
+
+[node name="Player" parent="." instance=ExtResource("1_54rh8")]
+position = Vector2(576, 324)
