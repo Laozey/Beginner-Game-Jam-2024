@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cog2k3ap0730j"]
+[gd_scene load_steps=12 format=3 uid="uid://cog2k3ap0730j"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_ioyg8"]
 [ext_resource type="Script" path="res://Player/StateMachine/player_state_machine.gd" id="2_43x7h"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://Player/StateMachine/State/player_idle_state.gd" id="3_m80xp"]
 [ext_resource type="Script" path="res://Player/StateMachine/State/player_run_state.gd" id="4_d3xmu"]
 [ext_resource type="Script" path="res://Weapons/weapon_manager.gd" id="6_djw2s"]
+[ext_resource type="PackedScene" uid="uid://cv0leslbdf2et" path="res://Weapons/weapon.tscn" id="7_6r7s6"]
+[ext_resource type="Resource" uid="uid://hl3t6gy1kug6" path="res://Weapons/Data/example.tres" id="8_gbmnb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxqip"]
 size = Vector2(125, 125)
@@ -39,6 +41,7 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_mxqip")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_x7p3w")
 animation = &"idle"
 autoplay = "idle"
@@ -58,3 +61,11 @@ script = ExtResource("4_d3xmu")
 
 [node name="Weapons" type="Node2D" parent="."]
 script = ExtResource("6_djw2s")
+
+[node name="Weapon" parent="Weapons" instance=ExtResource("7_6r7s6")]
+weapon_data = ExtResource("8_gbmnb")
+
+[node name="Cooldown" parent="Weapons/Weapon" index="1"]
+autostart = true
+
+[editable path="Weapons/Weapon"]
