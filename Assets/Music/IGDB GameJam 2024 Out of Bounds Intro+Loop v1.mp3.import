@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnrgv2aq44ayu"
+path="res://.godot/imported/IGDB GameJam 2024 Out of Bounds Intro+Loop v1.mp3-b28dfd3547313981f4d3d22166076008.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/IGDB GameJam 2024 Out of Bounds Intro+Loop v1.mp3"
+dest_files=["res://.godot/imported/IGDB GameJam 2024 Out of Bounds Intro+Loop v1.mp3-b28dfd3547313981f4d3d22166076008.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

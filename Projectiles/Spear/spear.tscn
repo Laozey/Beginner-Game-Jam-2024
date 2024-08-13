@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://048tvptedgi0" path="res://Projectiles/Base/base_projectile.tscn" id="1_f52c8"]
 [ext_resource type="Script" path="res://Projectiles/Spear/spear.gd" id="2_24xie"]
-[ext_resource type="Texture2D" uid="uid://drg61v2ibcmus" path="res://icon.svg" id="3_by0i6"]
+[ext_resource type="Texture2D" uid="uid://drg61v2ibcmus" path="res://icon.svg" id="3_jkwbk"]
 [ext_resource type="Script" path="res://Component/hit_box.gd" id="3_mdd2s"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dcbpx"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gks65"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_by0i6")
+"texture": ExtResource("3_jkwbk")
 }],
 "loop": true,
 "name": &"default",
@@ -20,7 +20,10 @@ animations = [{
 
 [node name="Spear" instance=ExtResource("1_f52c8")]
 script = ExtResource("2_24xie")
-speed = 200.0
+speed = 5.0
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_gks65")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 scale = Vector2(0.7, 0.05)

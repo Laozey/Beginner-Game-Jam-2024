@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhtl8yxb38wii"
+path="res://.godot/imported/IGDB GameJam 2024 Level Up v1.mp3-cffffb5b3dbfb3cb13ea986d9827d0b5.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/SFX/IGDB GameJam 2024 Level Up v1.mp3"
+dest_files=["res://.godot/imported/IGDB GameJam 2024 Level Up v1.mp3-cffffb5b3dbfb3cb13ea986d9827d0b5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

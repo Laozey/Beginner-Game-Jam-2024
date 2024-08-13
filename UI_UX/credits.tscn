@@ -1,0 +1,228 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci7441nbbcrnm"]
+
+[ext_resource type="Script" path="res://UI_UX/Credits.gd" id="1_oy5is"]
+[ext_resource type="FontFile" uid="uid://c451r7g7skxo2" path="res://Fonts/04b25-font/04B25-VrZ.ttf" id="2_s5c3c"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oy5is")
+
+[node name="BackgroundColour" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.129412, 0.411765, 0.184314, 1)
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -560.0
+offset_top = 251.0
+offset_right = -260.0
+offset_bottom = 311.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_s5c3c")
+theme_override_font_sizes/font_size = 40
+text = "Go Back"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 100.0
+offset_bottom = 148.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_fonts/font = ExtResource("2_s5c3c")
+theme_override_font_sizes/font_size = 80
+text = "CREDITS"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="DesignerLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -127.0
+offset_right = 9.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s5c3c")
+theme_override_font_sizes/font_size = 25
+text = "                                          Designer:"
+vertical_alignment = 1
+
+[node name="TBOGLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 300.0
+offset_top = -127.0
+offset_right = 300.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s5c3c")
+theme_override_font_sizes/font_size = 25
+text = "                                          TheBUSHMANOG"
+vertical_alignment = 1
+
+[node name="ArtistLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -94.0
+offset_bottom = -50.9993
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s5c3c")
+theme_override_font_sizes/font_size = 25
+text = "                                           Artist:"
+vertical_alignment = 1
+
+[node name="EpiLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 294.0
+offset_top = -94.0
+offset_right = 294.0
+offset_bottom = -50.9993
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s5c3c")
+theme_override_font_sizes/font_size = 25
+text = "                                           EpithetSoup"
+vertical_alignment = 1
+
+[node name="CompLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -59.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s5c3c")
+theme_override_font_sizes/font_size = 25
+text = "                                           Composer:"
+vertical_alignment = 1
+
+[node name="LuckyLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 292.33
+offset_top = -59.0
+offset_right = 292.33
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s5c3c")
+theme_override_font_sizes/font_size = 25
+text = "                                           ThatOneGuyFromLuckyCharms"
+vertical_alignment = 1
+
+[node name="DevLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -24.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s5c3c")
+theme_override_font_sizes/font_size = 25
+text = "                                           Programmer:"
+vertical_alignment = 1
+
+[node name="Zubat" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 292.0
+offset_top = -24.0
+offset_right = 292.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s5c3c")
+theme_override_font_sizes/font_size = 25
+text = "                                           Zubat"
+vertical_alignment = 1
+
+[node name="AssetsBy" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 11.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s5c3c")
+theme_override_font_sizes/font_size = 25
+text = "                                           Assets By:"
+vertical_alignment = 1
+
+[node name="AssetsBy2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 46.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s5c3c")
+theme_override_font_sizes/font_size = 25
+text = "Test Name Here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

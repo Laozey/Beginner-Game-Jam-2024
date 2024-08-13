@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=2 format=3 uid="uid://co2wrsdv0ocku"]
+
+[ext_resource type="Script" path="res://Weapons/weapon_data.gd" id="1_ah3if"]
+
+[resource]
+script = ExtResource("1_ah3if")
+projectile_count = 1
+spread = 1
+target_priority = 0

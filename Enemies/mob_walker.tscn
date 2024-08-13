@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://colpjb7d1s1e3"]
+
+[ext_resource type="Script" path="res://Enemies/mob_walker.gd" id="1_57qd3"]
+[ext_resource type="Texture2D" uid="uid://drg61v2ibcmus" path="res://icon.svg" id="1_cnusb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5a0i"]
+radius = 57.85
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3twf5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cnusb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Mob_Walker" type="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 3
+script = ExtResource("1_57qd3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j5a0i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.499994, -0.500002)
+scale = Vector2(0.757813, 0.710938)
+sprite_frames = SubResource("SpriteFrames_3twf5")
