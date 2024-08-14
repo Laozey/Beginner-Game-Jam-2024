@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckhgno8thmagx"]
+
+[ext_resource type="Script" path="res://UI_UX/victory_screen.gd" id="1_xe2tg"]
+[ext_resource type="FontFile" uid="uid://c451r7g7skxo2" path="res://Fonts/04b25-font/04B25-VrZ.ttf" id="2_40uka"]
+
+[node name="VictoryScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xe2tg")
+
+[node name="BackgroundColour" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.129412, 0.411765, 0.184314, 1)
+
+[node name="Back to Title" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 400.0
+offset_right = 150.0
+offset_bottom = 460.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_40uka")
+theme_override_font_sizes/font_size = 40
+text = "Go Back"
+
+[node name="Replay" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -49.0
+offset_right = 150.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_40uka")
+theme_override_font_sizes/font_size = 40
+text = "Replay"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 100.0
+offset_bottom = 148.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_fonts/font = ExtResource("2_40uka")
+theme_override_font_sizes/font_size = 80
+text = "! You Win !"
+horizontal_alignment = 1
+uppercase = true
+
+[connection signal="pressed" from="Back to Title" to="." method="_on_back_to_title_pressed"]

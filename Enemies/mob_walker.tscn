@@ -1,19 +1,87 @@
-[gd_scene load_steps=5 format=3 uid="uid://colpjb7d1s1e3"]
+[gd_scene load_steps=13 format=3 uid="uid://colpjb7d1s1e3"]
 
 [ext_resource type="Script" path="res://Enemies/mob_walker.gd" id="1_57qd3"]
-[ext_resource type="Texture2D" uid="uid://drg61v2ibcmus" path="res://icon.svg" id="1_cnusb"]
+[ext_resource type="Texture2D" uid="uid://bwo1lxl7cbc3p" path="res://Assets/Art/Slime_1.png" id="2_rnm6n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5a0i"]
 radius = 57.85
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y017e"]
+atlas = ExtResource("2_rnm6n")
+region = Rect2(0, 34, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xq7u"]
+atlas = ExtResource("2_rnm6n")
+region = Rect2(34, 34, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exlqj"]
+atlas = ExtResource("2_rnm6n")
+region = Rect2(0, 0, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onimp"]
+atlas = ExtResource("2_rnm6n")
+region = Rect2(34, 0, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hasp7"]
+atlas = ExtResource("2_rnm6n")
+region = Rect2(0, 102, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcoft"]
+atlas = ExtResource("2_rnm6n")
+region = Rect2(34, 102, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xumay"]
+atlas = ExtResource("2_rnm6n")
+region = Rect2(0, 68, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgelv"]
+atlas = ExtResource("2_rnm6n")
+region = Rect2(34, 68, 33, 34)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3twf5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_cnusb")
+"texture": SubResource("AtlasTexture_y017e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xq7u")
 }],
 "loop": true,
-"name": &"default",
+"name": &"backward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exlqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onimp")
+}],
+"loop": true,
+"name": &"forward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hasp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcoft")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xumay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgelv")
+}],
+"loop": true,
+"name": &"right",
 "speed": 5.0
 }]
 
@@ -29,3 +97,4 @@ shape = SubResource("CircleShape2D_j5a0i")
 position = Vector2(-0.499994, -0.500002)
 scale = Vector2(0.757813, 0.710938)
 sprite_frames = SubResource("SpriteFrames_3twf5")
+animation = &"right"

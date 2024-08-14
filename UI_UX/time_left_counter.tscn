@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://8h2ottgfjhm8"]
+
+[ext_resource type="Script" path="res://UI_UX/time_left_counter.gd" id="1_bly7i"]
+[ext_resource type="FontFile" uid="uid://c451r7g7skxo2" path="res://Fonts/04b25-font/04B25-VrZ.ttf" id="2_wlyxj"]
+
+[node name="TimeLeftCounter" type="Node"]
+script = ExtResource("1_bly7i")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_wlyxj")
+theme_override_font_sizes/font_size = 30
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 300.0
+
+[node name="Question Mark" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 52.0
+offset_right = 92.0
+offset_bottom = 30.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_wlyxj")
+theme_override_font_sizes/font_size = 30
+text = "??"
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
