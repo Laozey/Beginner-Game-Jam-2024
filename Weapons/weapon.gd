@@ -11,7 +11,7 @@ func fire() -> void:
 	var pool: Node = get_tree().get_first_node_in_group("ProjectilePool")
 	for _i in range(weapon_data.projectile_count):
 		var p = weapon_data.projectile.instantiate() as Projectile
-		pool.add_child(p)
+w		pool.add_child(p)
 		p.global_position = global_position
 		projectiles.append(p)
 	spread_projectiles(projectiles)

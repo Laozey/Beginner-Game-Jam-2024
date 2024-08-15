@@ -18,6 +18,7 @@ script = ExtResource("1_1pu40")
 position = Vector2(617, 385)
 
 [node name="Player" parent="." instance=ExtResource("1_067r1")]
+visible = false
 position = Vector2(734, 346)
 
 [node name="Path2D" type="Path2D" parent="Player"]
