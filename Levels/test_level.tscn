@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0bg72kvqeclq"]
+[gd_scene load_steps=6 format=3 uid="uid://b0bg72kvqeclq"]
 
 [ext_resource type="Script" path="res://Levels/test_level.gd" id="1_1pu40"]
 [ext_resource type="PackedScene" uid="uid://cog2k3ap0730j" path="res://Player/player.tscn" id="1_067r1"]
 [ext_resource type="PackedScene" uid="uid://colpjb7d1s1e3" path="res://Enemies/mob_walker.tscn" id="2_juu70"]
+[ext_resource type="PackedScene" uid="uid://cswl60y8rbigp" path="res://Levels/level_map.tscn" id="4_uhnku"]
 
 [sub_resource type="Curve2D" id="Curve2D_eusat"]
 _data = {
@@ -12,6 +13,9 @@ point_count = 5
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_1pu40")
+
+[node name="TileMap" parent="." instance=ExtResource("4_uhnku")]
+position = Vector2(617, 385)
 
 [node name="Player" parent="." instance=ExtResource("1_067r1")]
 position = Vector2(734, 346)
