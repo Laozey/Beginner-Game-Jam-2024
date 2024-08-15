@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm80f5wvla1sd"]
+[gd_scene load_steps=4 format=3 uid="uid://cm80f5wvla1sd"]
 
 [ext_resource type="PackedScene" uid="uid://cv0leslbdf2et" path="res://Weapons/_Base Weapon/weapon.tscn" id="1_o3s7a"]
-[ext_resource type="Resource" uid="uid://it13rab1dtb2" path="res://Weapons/Spear/Weapon/spear_weapon_data.tres" id="2_obrxm"]
+[ext_resource type="Script" path="res://Weapons/Spear/Weapon/spear_weapon.gd" id="2_dbxm8"]
+[ext_resource type="Resource" uid="uid://dbvyydjdq4we7" path="res://Weapons/Fireball/Weapon/fireball_weapon_data.tres" id="3_p6wpq"]
 
 [node name="Spear" instance=ExtResource("1_o3s7a")]
-weapon_data = ExtResource("2_obrxm")
+script = ExtResource("2_dbxm8")
+weapon_data = ExtResource("3_p6wpq")

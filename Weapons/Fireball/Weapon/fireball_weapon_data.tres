@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_u5ori")
 projectile = ExtResource("1_wncje")
+rate_of_fire = 0.0
 projectile_count = 1
 spread_strategy = 0
 spread = 360.0

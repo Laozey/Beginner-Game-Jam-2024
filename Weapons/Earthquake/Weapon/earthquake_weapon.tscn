@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cuk0rdqqm74ix"]
+[gd_scene load_steps=4 format=3 uid="uid://cuk0rdqqm74ix"]
 
 [ext_resource type="PackedScene" uid="uid://cv0leslbdf2et" path="res://Weapons/_Base Weapon/weapon.tscn" id="1_h302a"]
-[ext_resource type="Resource" uid="uid://bdk4mpltnbybf" path="res://Weapons/Earthquake/Weapon/earthquake_weapon_data.tres" id="2_fd84r"]
+[ext_resource type="Script" path="res://Weapons/Earthquake/Weapon/earthquake_weapon.gd" id="2_iy72v"]
+[ext_resource type="Resource" uid="uid://dbvyydjdq4we7" path="res://Weapons/Fireball/Weapon/fireball_weapon_data.tres" id="3_n2cxr"]
 
 [node name="Earthquake" instance=ExtResource("1_h302a")]
-weapon_data = ExtResource("2_fd84r")
+script = ExtResource("2_iy72v")
+weapon_data = ExtResource("3_n2cxr")

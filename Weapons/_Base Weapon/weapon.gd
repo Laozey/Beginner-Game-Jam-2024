@@ -1,6 +1,8 @@
 class_name Weapon
 extends Area2D
 
+signal projectile_fired(projectile: Projectile)
+
 @export var weapon_data: WeaponData
 
 var targets: Array[Node2D]
@@ -8,12 +10,11 @@ var level: int = 1
 
 func fire() -> void:
 	var projectiles: Array[Projectile] = []
-	var pool: Node = get_tree().get_first_node_in_group("ProjectilePool")
 	for _i in range(weapon_data.projectile_count):
-		var p = weapon_data.projectile.instantiate() as Projectile
-		pool.add_child(p)
-		p.global_position = global_position
-		projectiles.append(p)
+		var projectile = weapon_data.projectile.instantiate() as Projectile
+		projectile_fired.emit(projectile)
+		projectile.global_position = global_position
+		projectiles.append(projectile)
 	spread_projectiles(projectiles)
 
 

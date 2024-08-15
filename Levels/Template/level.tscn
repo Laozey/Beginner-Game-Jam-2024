@@ -1,10 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4mkuwnycuhuv"]
+[gd_scene load_steps=5 format=3 uid="uid://d4mkuwnycuhuv"]
 
 [ext_resource type="PackedScene" uid="uid://cog2k3ap0730j" path="res://Player/player.tscn" id="1_54rh8"]
+[ext_resource type="PackedScene" uid="uid://cswl60y8rbigp" path="res://Levels/level_map.tscn" id="2_x62lw"]
+[ext_resource type="PackedScene" uid="uid://bhomnw2fj6b6m" path="res://Weapons/Fireball/Weapon/fireball_weapon.tscn" id="3_vria4"]
+
+[sub_resource type="Curve2D" id="Curve2D_uwo64"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -845, -467, 0, 0, 0, 0, -853, 399, 0, 0, 0, 0, 493, 401, 0, 0, 0, 0, 497, -463, 0, 0, 0, 0, -845, -467)
+}
+point_count = 5
 
 [node name="Level" type="Node"]
 
-[node name="ProjectilePool" type="Node" parent="." groups=["ProjectilePool"]]
+[node name="TileMap" parent="." instance=ExtResource("2_x62lw")]
 
 [node name="Player" parent="." instance=ExtResource("1_54rh8")]
 position = Vector2(576, 324)
+
+[node name="Weapons" parent="Player" index="4" node_paths=PackedStringArray("projectile_pool")]
+projectile_pool = NodePath("../../ProjectilePool")
+
+[node name="Fireball" parent="Player/Weapons" index="0" instance=ExtResource("3_vria4")]
+
+[node name="Path2D" type="Path2D" parent="Player"]
+curve = SubResource("Curve2D_uwo64")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-845, -467)
+rotation = 1.58003
+
+[node name="ProjectilePool" type="Node" parent="."]
+
+[node name="EnemyPool" type="Node" parent="."]
+
+[connection signal="projectile_fired" from="Player/Weapons/Fireball" to="ProjectilePool" method="add_child"]
+
+[editable path="Player"]

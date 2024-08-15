@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cog2k3ap0730j"]
+[gd_scene load_steps=27 format=3 uid="uid://cog2k3ap0730j"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_ioyg8"]
 [ext_resource type="Script" path="res://Player/StateMachine/player_state_machine.gd" id="2_43x7h"]
@@ -6,8 +6,6 @@
 [ext_resource type="Script" path="res://Player/StateMachine/State/player_idle_state.gd" id="3_m80xp"]
 [ext_resource type="Script" path="res://Player/StateMachine/State/player_run_state.gd" id="4_d3xmu"]
 [ext_resource type="Script" path="res://Weapons/weapon_manager.gd" id="6_djw2s"]
-[ext_resource type="PackedScene" uid="uid://cv0leslbdf2et" path="res://Weapons/_Base Weapon/weapon.tscn" id="7_6r7s6"]
-[ext_resource type="Resource" uid="uid://dbvyydjdq4we7" path="res://Weapons/Fireball/Weapon/fireball_weapon_data.tres" id="8_omv3f"]
 [ext_resource type="Script" path="res://Component/health.gd" id="10_5k5ft"]
 [ext_resource type="Script" path="res://Component/hurt_box.gd" id="10_51xbm"]
 
@@ -176,15 +174,6 @@ script = ExtResource("4_d3xmu")
 [node name="Weapons" type="Node2D" parent="."]
 script = ExtResource("6_djw2s")
 
-[node name="Weapon" parent="Weapons" instance=ExtResource("7_6r7s6")]
-collision_layer = 0
-collision_mask = 2
-weapon_data = ExtResource("8_omv3f")
-
-[node name="Cooldown" parent="Weapons/Weapon" index="1"]
-wait_time = 3.0
-autostart = true
-
 [node name="Health" type="Node" parent="."]
 script = ExtResource("10_5k5ft")
 
@@ -213,5 +202,3 @@ show_percentage = false
 zoom = Vector2(3, 3)
 
 [connection signal="damage_taken" from="HurtBox" to="Health" method="take_damage"]
-
-[editable path="Weapons/Weapon"]

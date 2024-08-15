@@ -11,9 +11,9 @@ var hit_count: int:
 			last_hit.emit()
 
 
-func init(_damage: float, _hit_count: int) -> void:
+func init(_damage: float, pierce: int) -> void:
 	damage = _damage
-	hit_count = max(1, _hit_count)
+	hit_count = 1 + pierce
 
 
 func get_hit() -> float:
