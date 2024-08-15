@@ -221,7 +221,41 @@ grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_s5c3c")
 theme_override_font_sizes/font_size = 25
-text = "Test Name Here"
+text = "04b25 Font by 04"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AssetsBy3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 81.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s5c3c")
+theme_override_font_sizes/font_size = 25
+text = "Old English Gothic Pixel Font by ColorSwitchFan25"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AssetsBy4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 116.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_s5c3c")
+theme_override_font_sizes/font_size = 25
+text = "Free Buttons Pixel Animation Pack by hiorespace"
 horizontal_alignment = 1
 vertical_alignment = 1
 
