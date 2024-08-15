@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dnxxt5727k4"
+path="res://.godot/imported/IGDB GameJam 2024 Battle Theme Before 5 Minutes v1 (1).mp3-45862839374d93de871a701dc772b334.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/IGDB GameJam 2024 Battle Theme Before 5 Minutes v1 (1).mp3"
+dest_files=["res://.godot/imported/IGDB GameJam 2024 Battle Theme Before 5 Minutes v1 (1).mp3-45862839374d93de871a701dc772b334.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

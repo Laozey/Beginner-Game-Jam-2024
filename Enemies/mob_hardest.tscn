@@ -99,4 +99,4 @@ shape = SubResource("CircleShape2D_j5a0i")
 position = Vector2(-0.499994, -0.500002)
 scale = Vector2(0.757813, 0.710938)
 sprite_frames = SubResource("SpriteFrames_3twf5")
-animation = &"left"
+animation = &"right"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b5dexn4fjpq0v"
+path="res://.godot/imported/Boomerang_Return (1).mp3-ed1820601a784425dd0894f3fd5c6d9b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/SFX/Boomerang_Return (1).mp3"
+dest_files=["res://.godot/imported/Boomerang_Return (1).mp3-ed1820601a784425dd0894f3fd5c6d9b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
