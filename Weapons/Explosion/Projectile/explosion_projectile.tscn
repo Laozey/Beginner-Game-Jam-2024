@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://banhhkv1bbylr"]
+
+[ext_resource type="PackedScene" uid="uid://048tvptedgi0" path="res://Weapons/_Base Projectile/base_projectile.tscn" id="1_bfcbg"]
+[ext_resource type="Script" path="res://Weapons/Explosion/Projectile/explosion_projectile.gd" id="2_xbsuu"]
+[ext_resource type="Script" path="res://Component/one_time_hit_box.gd" id="3_e7jhq"]
+[ext_resource type="Resource" uid="uid://dg6ga52fhcg3x" path="res://Weapons/Explosion/Projectile/explosion_projectile_data.tres" id="3_m4oav"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aiysh"]
+
+[node name="Explosion" instance=ExtResource("1_bfcbg")]
+script = ExtResource("2_xbsuu")
+projectile_data = ExtResource("3_m4oav")
+
+[node name="HitBox" type="Area2D" parent="." index="1"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_e7jhq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
+shape = SubResource("CircleShape2D_aiysh")
+
+[connection signal="hit" from="HitBox" to="." method="_on_hit_box_hit"]

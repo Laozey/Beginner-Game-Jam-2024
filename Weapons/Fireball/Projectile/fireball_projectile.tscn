@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5ml524k1qyq8"]
+
+[ext_resource type="PackedScene" uid="uid://048tvptedgi0" path="res://Weapons/_Base Projectile/base_projectile.tscn" id="1_p4y05"]
+[ext_resource type="Script" path="res://Weapons/Fireball/Projectile/fireball_projectile.gd" id="2_coumh"]
+[ext_resource type="PackedScene" uid="uid://banhhkv1bbylr" path="res://Weapons/Explosion/Projectile/explosion_projectile.tscn" id="3_d7m5h"]
+[ext_resource type="Texture2D" uid="uid://sw8ahv8pmb65" path="res://Assets/Art/fireball1.png" id="3_onrnf"]
+[ext_resource type="Resource" uid="uid://c4lc3wr4je3om" path="res://Weapons/Fireball/Projectile/fireball_projectile_data.tres" id="4_1i0xr"]
+[ext_resource type="Texture2D" uid="uid://dorvp2pr82yg8" path="res://Assets/Art/fireball2.png" id="4_lo5b4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vxh8y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_onrnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lo5b4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qrchq"]
+radius = 9.0
+
+[node name="Fireball" instance=ExtResource("1_p4y05")]
+script = ExtResource("2_coumh")
+projectile_scene = ExtResource("3_d7m5h")
+speed = 100.0
+projectile_data = ExtResource("4_1i0xr")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_vxh8y")
+autoplay = "default"
+frame_progress = 0.617563
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="1"]
+
+[node name="Lifetime" type="Timer" parent="." index="2"]
+
+[node name="TriggerBox" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerBox" index="0"]
+position = Vector2(5, 0)
+shape = SubResource("CircleShape2D_qrchq")
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
+[connection signal="area_entered" from="TriggerBox" to="." method="_on_trigger_box_area_entered"]

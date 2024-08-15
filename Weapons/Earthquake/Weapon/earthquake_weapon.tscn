@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuk0rdqqm74ix"]
+
+[ext_resource type="PackedScene" uid="uid://cv0leslbdf2et" path="res://Weapons/_Base Weapon/weapon.tscn" id="1_h302a"]
+[ext_resource type="Resource" uid="uid://bdk4mpltnbybf" path="res://Weapons/Earthquake/Weapon/earthquake_weapon_data.tres" id="2_fd84r"]
+
+[node name="Earthquake" instance=ExtResource("1_h302a")]
+weapon_data = ExtResource("2_fd84r")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm80f5wvla1sd"]
+
+[ext_resource type="PackedScene" uid="uid://cv0leslbdf2et" path="res://Weapons/_Base Weapon/weapon.tscn" id="1_o3s7a"]
+[ext_resource type="Resource" uid="uid://it13rab1dtb2" path="res://Weapons/Spear/Weapon/spear_weapon_data.tres" id="2_obrxm"]
+
+[node name="Spear" instance=ExtResource("1_o3s7a")]
+weapon_data = ExtResource("2_obrxm")

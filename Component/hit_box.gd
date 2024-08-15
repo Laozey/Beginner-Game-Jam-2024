@@ -3,12 +3,17 @@ extends Area2D
 
 signal last_hit
 
-@export var damage: float
-@export var hit_count: int:
+var damage: float
+var hit_count: int:
 	set(value):
 		hit_count = value
 		if hit_count == 0:
 			last_hit.emit()
+
+
+func init(_damage: float, _hit_count: int) -> void:
+	damage = _damage
+	hit_count = max(1, _hit_count)
 
 
 func get_hit() -> float:

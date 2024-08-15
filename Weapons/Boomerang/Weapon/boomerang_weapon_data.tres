@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3 uid="uid://co2wrsdv0ocku"]
+
+[ext_resource type="Script" path="res://Weapons/_Data/weapon_data.gd" id="1_ah3if"]
+[ext_resource type="PackedScene" uid="uid://dhgv47l3ka1hb" path="res://Weapons/Boomerang/Projectile/boomerang_projectile.tscn" id="1_rdcyb"]
+
+[resource]
+script = ExtResource("1_ah3if")
+projectile = ExtResource("1_rdcyb")
+rate_of_fire = 0.0
+projectile_count = 1
+spread_strategy = 0
+spread = 1
+target_priority = 0

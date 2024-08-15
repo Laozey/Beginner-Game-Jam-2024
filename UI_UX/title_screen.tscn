@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpsrh675gohfv"]
 
-[ext_resource type="Script" path="res://UI_UX/TitleScreen.gd" id="1_7qgd2"]
+[ext_resource type="Script" path="res://UI_UX/title_screen.gd" id="1_7qgd2"]
 [ext_resource type="FontFile" uid="uid://c451r7g7skxo2" path="res://Fonts/04b25-font/04B25-VrZ.ttf" id="2_tt0fw"]
 
 [node name="TitleScreen" type="Control"]
@@ -11,6 +11,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7qgd2")
+level_scene_path = "res://Levels/Template/level.tscn"
+credit_scene_path = "res://UI_UX/credits.tscn"
 
 [node name="BackgroundColour" type="ColorRect" parent="."]
 layout_mode = 1

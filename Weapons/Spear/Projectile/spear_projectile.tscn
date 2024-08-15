@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://v1khftftb4vk"]
+
+[ext_resource type="PackedScene" uid="uid://048tvptedgi0" path="res://Weapons/_Base Projectile/base_projectile.tscn" id="1_f52c8"]
+[ext_resource type="Script" path="res://Weapons/Spear/Projectile/spear_projectile.gd" id="2_24xie"]
+[ext_resource type="Script" path="res://Component/hit_box.gd" id="3_mdd2s"]
+[ext_resource type="Resource" uid="uid://cc0xsqcex4ln" path="res://Weapons/Spear/Projectile/spear_projectile_data.tres" id="3_sh46r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lyk8o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w628q"]
+
+[node name="Spear" instance=ExtResource("1_f52c8")]
+script = ExtResource("2_24xie")
+speed = 5.0
+projectile_data = ExtResource("3_sh46r")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+scale = Vector2(0.7, 0.05)
+sprite_frames = SubResource("SpriteFrames_lyk8o")
+
+[node name="Lifetime" type="Timer" parent="." index="1"]
+wait_time = 3.0
+autostart = true
+
+[node name="HitBox" type="Area2D" parent="." index="2"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_mdd2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
+shape = SubResource("RectangleShape2D_w628q")
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
+[connection signal="last_hit" from="HitBox" to="." method="_on_hit_box_last_hit"]

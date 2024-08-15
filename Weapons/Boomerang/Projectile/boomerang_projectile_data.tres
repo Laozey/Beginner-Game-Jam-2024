@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ProjectileData" load_steps=2 format=3 uid="uid://bxmbhlrbbm2go"]
+
+[ext_resource type="Script" path="res://Weapons/_Data/projectile_data.gd" id="1_njug8"]
+
+[resource]
+script = ExtResource("1_njug8")
+damage = 0.0
+size = 0.0
+pierce = 0

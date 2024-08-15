@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3 uid="uid://cicd2xb5egcd7"]
+
+[ext_resource type="Script" path="res://Weapons/_Data/weapon_data.gd" id="1_7ov30"]
+[ext_resource type="PackedScene" uid="uid://dhgv47l3ka1hb" path="res://Weapons/Boomerang/Projectile/boomerang_projectile.tscn" id="1_wocvo"]
+
+[resource]
+script = ExtResource("1_7ov30")
+projectile = ExtResource("1_wocvo")
+projectile_count = 1
+spread_strategy = 0
+spread = 0.0
+target_priority = 0
