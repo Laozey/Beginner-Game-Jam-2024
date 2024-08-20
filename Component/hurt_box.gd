@@ -4,6 +4,10 @@ extends Area2D
 signal damage_taken(amount: float)
 
 
+func _ready() -> void:
+	area_entered.connect(_on_area_entered)
+
+
 func _on_area_entered(hitbox: HitBox) -> void:
 	if hitbox == null:
 		return

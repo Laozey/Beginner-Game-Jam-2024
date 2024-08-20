@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GemData" load_steps=3 format=3 uid="uid://ik6vs10s3n3s"]
+
+[ext_resource type="Script" path="res://Exp/Gems/Data/gem_data.gd" id="1_yib81"]
+[ext_resource type="Texture2D" uid="uid://s1aphnjgk0k" path="res://Assets/Art/Gem2.png" id="2_r4pom"]
+
+[resource]
+script = ExtResource("1_yib81")
+xp = 25
+texture = ExtResource("2_r4pom")

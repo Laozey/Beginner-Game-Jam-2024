@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cog2k3ap0730j"]
+[gd_scene load_steps=29 format=3 uid="uid://cog2k3ap0730j"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_ioyg8"]
 [ext_resource type="Script" path="res://Player/StateMachine/player_state_machine.gd" id="2_43x7h"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Player/StateMachine/State/player_idle_state.gd" id="3_m80xp"]
 [ext_resource type="Script" path="res://Player/StateMachine/State/player_run_state.gd" id="4_d3xmu"]
 [ext_resource type="Script" path="res://Weapons/weapon_manager.gd" id="6_djw2s"]
+[ext_resource type="Script" path="res://Exp/exp.gd" id="8_u0okl"]
 [ext_resource type="Script" path="res://Component/health.gd" id="10_5k5ft"]
 [ext_resource type="Script" path="res://Component/hurt_box.gd" id="10_51xbm"]
 
@@ -126,8 +127,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5ggpx"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhk15"]
 bg_color = Color(0.270588, 0.270588, 0.270588, 1)
 corner_radius_top_left = 8
@@ -141,6 +140,12 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uri6h"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ggpx"]
+radius = 8.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 0
@@ -160,6 +165,21 @@ autoplay = "idle"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
+[node name="HealthBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = 47.0
+offset_top = 70.0
+offset_right = 57.0
+offset_bottom = 170.0
+rotation = 1.5708
+theme_override_styles/background = SubResource("StyleBoxFlat_xhk15")
+theme_override_styles/fill = SubResource("StyleBoxFlat_e0cgj")
+value = 100.0
+show_percentage = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("player_node", "current_state")]
 script = ExtResource("2_43x7h")
 player_node = NodePath("..")
@@ -176,6 +196,20 @@ script = ExtResource("6_djw2s")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("10_5k5ft")
+health = 100.0
+
+[node name="Exp" type="Node" parent="."]
+script = ExtResource("8_u0okl")
+base_threshold = 100.0
+
+[node name="ExpBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("10_51xbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExpBox"]
+shape = SubResource("CircleShape2D_uri6h")
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -186,19 +220,5 @@ script = ExtResource("10_51xbm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CircleShape2D_5ggpx")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-unique_name_in_owner = true
-offset_left = 47.0
-offset_top = 70.0
-offset_right = 57.0
-offset_bottom = 170.0
-rotation = 1.5708
-theme_override_styles/background = SubResource("StyleBoxFlat_xhk15")
-theme_override_styles/fill = SubResource("StyleBoxFlat_e0cgj")
-value = 100.0
-show_percentage = false
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
-
+[connection signal="damage_taken" from="ExpBox" to="Exp" method="take_exp"]
 [connection signal="damage_taken" from="HurtBox" to="Health" method="take_damage"]

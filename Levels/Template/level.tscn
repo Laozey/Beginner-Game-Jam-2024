@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4mkuwnycuhuv"]
+[gd_scene load_steps=7 format=3 uid="uid://d4mkuwnycuhuv"]
 
 [ext_resource type="PackedScene" uid="uid://cog2k3ap0730j" path="res://Player/player.tscn" id="1_54rh8"]
 [ext_resource type="PackedScene" uid="uid://cswl60y8rbigp" path="res://Levels/level_map.tscn" id="2_x62lw"]
 [ext_resource type="PackedScene" uid="uid://bhomnw2fj6b6m" path="res://Weapons/Fireball/Weapon/fireball_weapon.tscn" id="3_vria4"]
+[ext_resource type="PackedScene" uid="uid://nua6o35f074s" path="res://Exp/Gems/_Base Gem/gem.tscn" id="4_dl1yl"]
+[ext_resource type="Resource" uid="uid://ik6vs10s3n3s" path="res://Exp/Gems/Data/red_gem.tres" id="5_4rr10"]
 
 [sub_resource type="Curve2D" id="Curve2D_uwo64"]
 _data = {
@@ -17,7 +19,7 @@ point_count = 5
 [node name="Player" parent="." instance=ExtResource("1_54rh8")]
 position = Vector2(576, 324)
 
-[node name="Weapons" parent="Player" index="4" node_paths=PackedStringArray("projectile_pool")]
+[node name="Weapons" parent="Player" index="6" node_paths=PackedStringArray("projectile_pool")]
 projectile_pool = NodePath("../../ProjectilePool")
 
 [node name="Fireball" parent="Player/Weapons" index="0" instance=ExtResource("3_vria4")]
@@ -33,6 +35,24 @@ rotation = 1.58003
 [node name="ProjectilePool" type="Node" parent="."]
 
 [node name="EnemyPool" type="Node" parent="."]
+
+[node name="GemPool" type="Node" parent="."]
+
+[node name="Gem" parent="GemPool" instance=ExtResource("4_dl1yl")]
+position = Vector2(638, 251)
+gem_data = ExtResource("5_4rr10")
+
+[node name="Gem2" parent="GemPool" instance=ExtResource("4_dl1yl")]
+position = Vector2(709, 280)
+gem_data = ExtResource("5_4rr10")
+
+[node name="Gem3" parent="GemPool" instance=ExtResource("4_dl1yl")]
+position = Vector2(705, 366)
+gem_data = ExtResource("5_4rr10")
+
+[node name="Gem4" parent="GemPool" instance=ExtResource("4_dl1yl")]
+position = Vector2(628, 400)
+gem_data = ExtResource("5_4rr10")
 
 [connection signal="projectile_fired" from="Player/Weapons/Fireball" to="ProjectilePool" method="add_child"]
 
